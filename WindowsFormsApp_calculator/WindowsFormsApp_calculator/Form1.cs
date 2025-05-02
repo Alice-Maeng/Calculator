@@ -16,5 +16,32 @@ namespace WindowsFormsApp_calculator
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox_result.Text += "1";
+            int number = int.Parse(textBox_result.Text);
+            textBox_result.Text = number.ToString();
+
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox_result.Text += "2";
+            int number = int.Parse(textBox_result.Text);
+            textBox_result.Text = number.ToString();
+        }
+
+        private void button_plus_Click(object sender, EventArgs e)
+        {
+            textBox_result.Text += "+";
+ 
+        }
+
+        private void button_eq_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
