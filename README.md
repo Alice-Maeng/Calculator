@@ -216,7 +216,8 @@ private void button_pm_Click(object sender, EventArgs e)
 
 ## 📷 UI 미리보기
 
-
+![image](https://github.com/user-attachments/assets/0c31068f-e801-4759-be20-87718fc72bca)
+![image](https://github.com/user-attachments/assets/df076063-baa9-4bc4-aca1-86a58f0f210a)
 
 ---
 
