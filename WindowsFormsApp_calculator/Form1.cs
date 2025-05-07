@@ -380,7 +380,7 @@ namespace WindowsFormsApp_calculator
         // 초기화 버튼 
         private void button_CE_Click(object sender, EventArgs e)
         {
-            
+            textBox_result.Text = string.Empty; //입력값 초기화
         }
 
         private void button_C_Click(object sender, EventArgs e)
