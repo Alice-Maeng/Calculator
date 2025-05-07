@@ -43,7 +43,7 @@ C#과 Windows Forms를 이용한 **기본 계산기 프로그램**을 만들었�
 ## 🔍 코드의 주요 부분 설명
 
 ### 1. 연산 처리 (핵심 로직)
-
+- 
 ```csharp
 enum operation
 {
@@ -72,7 +72,7 @@ private void HandleOperation(operation selectedOp, char symbol)
 ---
 
 ### 2. 숫자 버튼 처리 (`AppendNumber`)
-`AppendNumber` 메서드는 숫자 버튼을 클릭할 때마다 해당 숫자를 `RichTextBox`에 추가합니다. 
+`AppendNumber` 메서드는 숫자 버튼을 클릭할 때마다 해당 숫자를 `RichTextBox`에 추가합니다.<br/>
 결과값을 표시한 후 새로운 숫자를 입력하려는 경우 화면을 초기화합니다.
 
 ```csharp
@@ -81,7 +81,7 @@ private void AppendNumber(string num)
     if (result_Num)
     {
         richTextBox1.Text = "";
-        result_Num = false;
+        result_Num = false; 
     }
     richTextBox1.Font = new Font("Arial", 14);
     richTextBox1.Text += num;
@@ -89,7 +89,8 @@ private void AppendNumber(string num)
 ```
 
 ### 3. 연산자 처리 (`HandleOperation`)
-`HandleOperation` 메서드는 사용자가 연산자 버튼을 클릭했을 때, 입력된 텍스트가 유효한지 확인한 후, 연산자를 처리하고 텍스트에 해당 연산자를 추가합니다. 연산자 입력이 잘못된 위치에 있을 경우 에러 메시지를 표시합니다.
+`HandleOperation` 메서드는 사용자가 연산자 버튼을 클릭했을 때, 입력된 텍스트가 유효한지 확인한 후, 연산자를 처리하고 텍스트에 해당 연산자를 추가합니다. <br/>
+연산자 입력이 잘못된 위치에 있을 경우 에러 메시지를 표시합니다.
 
 ```csharp
 private void HandleOperation(operation selectedOp, char symbol)
@@ -117,7 +118,8 @@ private void HandleOperation(operation selectedOp, char symbol)
 ```
 
 ### 4. `=` 버튼 클릭 시 연산 수행 (`button_eq_Click`)
-`button_eq_Click` 메서드는 사용자가 `=` 버튼을 클릭했을 때, 입력된 수식에 대해 연산을 수행하고 결과를 화면에 표시합니다. 연산자는 `op` 변수에 저장된 값에 따라 다르게 처리됩니다.
+`button_eq_Click` 메서드는 사용자가 `=` 버튼을 클릭했을 때, 입력된 수식에 대해 연산을 수행하고 결과를 화면에 표시합니다. <br/>
+연산자는 `op` 변수에 저장된 값에 따라 다르게 처리됩니다.
 
 ```csharp
 private void button_eq_Click(object sender, EventArgs e)
