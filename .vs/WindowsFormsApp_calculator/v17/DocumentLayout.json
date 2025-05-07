@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|c:\\users\\lunit\\desktop\\prj.calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\windowsformsapp_calculator\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|c:\\users\\lunit\\desktop\\prj.calculator\\windowsformsapp_calculator\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +38,44 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form2.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form2.cs",
+              "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form2.cs",
+              "RelativeToolTip": "WindowsFormsApp_calculator\\Form2.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T02:25:44.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form2.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form2.cs",
+              "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form2.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp_calculator\\Form2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T02:25:33.846Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
               "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
               "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwBAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAABoCAAAAAAAAAAA/wCUCAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:53:00.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "WhenOpened": "2025-05-06T08:53:00.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
