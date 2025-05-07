@@ -17,186 +17,96 @@ namespace WindowsFormsApp_calculator
         {
             InitializeComponent();
         }
-        enum operation  //enum으로 연산자 저장
+        enum operation
         {
             plus,
             minus,
             divide,
             multiple,
-            power,
             equal
         }
 
-        operation op;   //연산 변수 선언
+        operation op;
 
-        double a; // 첫번째 숫자
-        double b; // 두번째 숫자
-        double result; // 결과
+        double a; // 첫 번째 숫자
+        double b; // 두 번째 숫자
+        double result; // 결과값
 
-        bool result_Num = false; //현재 값이 연산 결과인지 판별하는 bool 변수
-        char[] operators = { '+', '-', '/', '*', '^', '='}; //연산자들
+        bool result_Num = false; // 현재 값이 연산 결과인지 판단
+        char[] operators = { '+', '-', '/', '*', '^', '=' };
 
-        bool justcal = false; // 연산직후 여부 판단
- 
+        // 공통 오류 메시지 표시 함수
+        private void ShowError(string message = "잘못된 입력입니다.")
+        {
+            MessageBox.Show(message);
+            result_Num = false;
+        }
 
-        #region #숫자 코드
-        private void button1_Click(object sender, EventArgs e)
+
+        // 숫자 버튼 공통 처리 함수
+        private void AppendNumber(string num)
         {
             if (result_Num)
             {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-")) //-만 있거나 음수일 경우
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
+                textBox_result.Text = "";
+                result_Num = false;
             }
-            textBox_result.Text += "1";
+            textBox_result.Text += num;
+       
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "2";
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "3";
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "4";
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "5";
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "6";
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "7";
-        }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "8";
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (result_Num)
-            {
-                if (textBox_result.Text != "-" && !textBox_result.Text.StartsWith("-"))
-                {
-                    textBox_result.Text = "";
-                    result_Num = false;
-                }
-            }
-            textBox_result.Text += "9";
-        }
+
+        // 숫자 버튼 이벤트
+        private void button1_Click(object sender, EventArgs e) => AppendNumber("1");
+        private void button2_Click(object sender, EventArgs e) => AppendNumber("2");
+        private void button3_Click(object sender, EventArgs e) => AppendNumber("3");
+        private void button4_Click(object sender, EventArgs e) => AppendNumber("4");
+        private void button5_Click(object sender, EventArgs e) => AppendNumber("5");
+        private void button6_Click(object sender, EventArgs e) => AppendNumber("6");
+        private void button7_Click(object sender, EventArgs e) => AppendNumber("7");
+        private void button8_Click(object sender, EventArgs e) => AppendNumber("8");
+        private void button9_Click(object sender, EventArgs e) => AppendNumber("9");
         private void button0_Click(object sender, EventArgs e)
         {
-            if (textBox_result.Text == "0")
-            {
-                return;
-            }
-            textBox_result.Text += "0";
+            if (textBox_result.Text != "0")
+                AppendNumber("0");
         }
 
-        #endregion
-
-        #region #사칙연산 코드
-
-        private void button_plus_Click(object sender, EventArgs e)
+        // 사칙연산 공통 처리 함수
+        private void HandleOperation(operation selectedOp, char symbol)
         {
             string text = textBox_result.Text;
 
-            if (justcal)
-            {
-                justcal = false;
-            }
-
+            //빈칸 / 3+ / 3. 처럼 연산자로 끝나거나 소수점으로 끝났을때 error 팝업 
             if (string.IsNullOrEmpty(text) || operators.Any(op => text.EndsWith(op.ToString())) || text.EndsWith("."))
             {
-                MessageBox.Show("잘못된 입력입니다.");
+                MessageBox.Show("Error");
+                result_Num = false;
+                return;
+            }
+
+            if (double.TryParse(text, out a)) // 3+과 같은 숫자+연산자 표시를 위해 필요
+            {
+                op = selectedOp; //연산자 선택
+                textBox_result.Text += symbol; // 연산자 추가
                 result_Num = false;
             }
             else
             {
-                if (double.TryParse(text, out a))
-                {
-                    op = operation.plus;
-                    textBox_result.Text += "+";
-                    result_Num = false;
-                }
-                else
-                {
-                    MessageBox.Show("숫자를 올바르게 입력해주세요.");
-                }
+                MessageBox.Show("숫자를 올바르게 입력해주세요.");
             }
         }
 
+        private void button_plus_Click(object sender, EventArgs e)
+        {
+            HandleOperation(operation.plus, '+');
+        }
         private void button_minus_Click(object sender, EventArgs e)
         {
             string text = textBox_result.Text;
 
             if (operators.Any(op => text.EndsWith(op.ToString())) || text.EndsWith("."))
             {
-                MessageBox.Show("잘못된 입력입니다.");
+                MessageBox.Show("Error");
                 result_Num = false;
                 return;
             }
@@ -220,55 +130,16 @@ namespace WindowsFormsApp_calculator
                 }
             }
         }
-
-        private void button_multiple_Click(object sender, EventArgs e)
+        private void button_multiple_Click(object sender, EventArgs e) 
         {
-            string text = textBox_result.Text;
-
-            if (string.IsNullOrEmpty(text) || operators.Any(op => text.EndsWith(op.ToString())) || text.EndsWith("."))
-            {
-                MessageBox.Show("잘못된 입력입니다.");
-                result_Num = false;
-            }
-            else
-            {
-                if (double.TryParse(text, out a))
-                {
-                    op = operation.multiple;
-                    textBox_result.Text += "*";
-                    result_Num = false;
-                }
-                else
-                {
-                    MessageBox.Show("숫자를 올바르게 입력해주세요.");
-                }
-            }
+            HandleOperation(operation.multiple, '*');
         }
-
         private void button_divide_Click(object sender, EventArgs e)
         {
-            string text = textBox_result.Text;
-
-            if (string.IsNullOrEmpty(text) || operators.Any(op => text.EndsWith(op.ToString())) || text.EndsWith("."))
-            {
-                MessageBox.Show("잘못된 입력입니다.");
-                result_Num = false;
-            }
-            else
-            {
-                if (double.TryParse(text, out a))
-                {
-                    op = operation.divide;
-                    textBox_result.Text += "/";
-                    result_Num = false;
-                }
-                else
-                {
-                    MessageBox.Show("숫자를 올바르게 입력해주세요.");
-                }
-            }
+            HandleOperation(operation.divide, '/');
         }
 
+        // = 버튼
         private void button_eq_Click(object sender, EventArgs e)
         {
             string text = textBox_result.Text;
@@ -276,30 +147,26 @@ namespace WindowsFormsApp_calculator
 
             if (string.IsNullOrEmpty(text) || operators.Any(op => text.EndsWith(op.ToString())))
             {
-                MessageBox.Show("잘못된 입력입니다.");
+                MessageBox.Show("Error");
                 return;
             }
 
             string[] parts = null;
-
             switch (op)
             {
-                case operation.plus:
-                    parts = text.Split('+');
+                case operation.plus: 
+                    parts = text.Split('+'); 
                     break;
                 case operation.minus:
                     int idx = text.LastIndexOf('-');
                     if (idx > 0)
-                        parts = new string[] { text.Substring(0, idx), text.Substring(idx + 1) };
+                        parts = new[] { text.Substring(0, idx), text.Substring(idx + 1) };
                     break;
-                case operation.multiple:
-                    parts = text.Split('*');
+                case operation.multiple: 
+                    parts = text.Split('*'); 
                     break;
-                case operation.divide:
-                    parts = text.Split('/');
-                    break;
-                case operation.power:
-                    parts = text.Split('^');
+                case operation.divide: 
+                    parts = text.Split('/'); 
                     break;
             }
 
@@ -311,14 +178,14 @@ namespace WindowsFormsApp_calculator
 
             switch (op)
             {
-                case operation.plus:
-                    result = a + b;
+                case operation.plus: 
+                    result = a + b; 
                     break;
-                case operation.minus:
-                    result = a - b;
+                case operation.minus: 
+                    result = a - b; 
                     break;
-                case operation.multiple:
-                    result = a * b;
+                case operation.multiple: 
+                    result = a * b; 
                     break;
                 case operation.divide:
                     if (b == 0)
@@ -326,207 +193,86 @@ namespace WindowsFormsApp_calculator
                         MessageBox.Show("0으로 나눌 수 없습니다.");
                         return;
                     }
-                    result = a / b;
-                    break;
-                case operation.power:
-                    result = Math.Pow(a, b);
+                    result = a / b; 
                     break;
             }
 
             textBox_result.Text = result.ToString();
-       
             a = result;
-            justcal = true;
         }
 
-
-        #endregion
-
-        // 음수 양수 코드 
+        // ± 부호 전환
         private void button_pm_Click(object sender, EventArgs e)
         {
             string text = textBox_result.Text;
-            if (textBox_result.Text == string.Empty || operators.Any(op => text.LastIndexOf(op) > 0) || textBox_result.Text.EndsWith("."))
+            if (string.IsNullOrEmpty(text) || operators.Any(op => text.LastIndexOf(op) > 0) || text.EndsWith("."))
             {
-                MessageBox.Show("잘못된 입력입니다.");
+                MessageBox.Show("Error");
                 result_Num = false;
+                return;
             }
-            else
+
+            if (double.TryParse(text, out double value))
             {
-                textBox_result.Text = (-double.Parse(textBox_result.Text)).ToString();  //음수/양수 변환
+                textBox_result.Text = (-value).ToString();
             }
         }
 
-        // 소수점 표기 
+       
+
+        // 초기화
+        private void button_C_Click(object sender, EventArgs e)
+        {
+            textBox_result.Text = string.Empty;
+        }
+
+        // 삭제
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            if (textBox_result.Text.Length > 0)
+                textBox_result.Text = textBox_result.Text.Remove(textBox_result.Text.Length - 1);
+     
+        }
+
+
+        #region 소수점, 퍼센트
+
+        // 소수점
         private void button_dot_Click(object sender, EventArgs e)
         {
             string text = textBox_result.Text;
-            if (operators.Any(op => textBox_result.Text.EndsWith(op.ToString()))) //문자열의 끝이 연산기호일 경우
+            if (operators.Any(op => text.EndsWith(op.ToString())))
             {
-                MessageBox.Show("잘못된 입력입니다.");
+                MessageBox.Show("Error");
                 result_Num = false;
                 return;
             }
+
             string[] parts = text.Split(operators);
-            if (parts.Length > 0 && parts[parts.Length - 1].Contains("."))  //소수점이 바로 앞에 존재할 경우
+            if (parts.Length > 0 && parts[parts.Length - 1].Contains("."))
             {
-                MessageBox.Show("잘못된 입력입니다.");
+                MessageBox.Show("Error");
                 result_Num = false;
                 return;
             }
+
             textBox_result.Text += ".";
         }
-
-        // 초기화 버튼 
-        private void button_CE_Click(object sender, EventArgs e)
+        // 퍼센트
+        private void button_percent_Click(object sender, EventArgs e)
         {
-            textBox_result.Text = string.Empty; //입력값 초기화
-        }
-
-        private void button_C_Click(object sender, EventArgs e)
-        {
-            textBox_result.Text = string.Empty; //입력값 초기화
-        }
-
-        private void button_delete_Click(object sender, EventArgs e) //입력값 하나씩 삭제
-        {
-            
-           if (textBox_result.Text.Length > 0)
-           {
-               textBox_result.Text = textBox_result.Text.Remove(textBox_result.Text.Length - 1);   // 마지막 문자 삭제
-           }
-           else
-           {
-               textBox_result.Text = string.Empty; // 빈 문자열 유지
-           }
-            
-        }
-
-        #region 고급기능 구현 
-        private void button_square_Click(object sender, EventArgs e)    //제곱 연산
-        {
-            string text = textBox_result.Text;
-            int eNum = textBox_result.Text.LastIndexOfAny(new char[] { 'E', 'e' });
-            if (eNum > 0 && eNum + 1 < textBox_result.Text.Length)
-            {
-                char nextChar = textBox_result.Text[eNum + 1];
-                if (nextChar == '+')
-                {
-                    MessageBox.Show("숫자가 너무 큽니다. 새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-                else if (nextChar == '-')
-                {
-                    MessageBox.Show("숫자가 너무 작습니다.새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-            }
-            if (textBox_result.Text == string.Empty || operators.Any(op => text.LastIndexOf(op) > 0) || textBox_result.Text.EndsWith("."))
+            if (string.IsNullOrEmpty(textBox_result.Text) || operators.Any(op => textBox_result.Text.LastIndexOf(op) > 0) || textBox_result.Text.EndsWith("."))
             {
                 MessageBox.Show("잘못된 입력입니다.");
                 result_Num = false;
-            }
-            else
-            {
-                textBox_result.Text = Math.Pow(double.Parse(textBox_result.Text), 2).ToString();
-                result_Num = true;
-            }
-        }
-
-        private void button_power_Click(object sender, EventArgs e) //거듭제곱 연산
-        {
-            string text = textBox_result.Text;
-            int eNum = textBox_result.Text.LastIndexOfAny(new char[] { 'E', 'e' });
-            if (eNum > 0 && eNum + 1 < textBox_result.Text.Length)
-            {
-                char nextChar = textBox_result.Text[eNum + 1];
-                if (nextChar == '+')
-                {
-                    MessageBox.Show("숫자가 너무 큽니다. 새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-                else if (nextChar == '-')
-                {
-                    MessageBox.Show("숫자가 너무 작습니다.새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-            }
-            if (textBox_result.Text == string.Empty || operators.Any(op => text.LastIndexOf(op) > 0) || textBox_result.Text.EndsWith("."))
-            {
-                MessageBox.Show("잘못된 입력입니다.");
-                result_Num = false;
-            }
-            else
-            {
-                a = double.Parse(textBox_result.Text);
-                op = operation.power;
-                textBox_result.Text += "^";
-                result_Num = false;
-            }
-        }
-        private void button_sqrt_Click(object sender, EventArgs e)  //루트 연산
-        {
-            string text = textBox_result.Text;
-            int eNum = textBox_result.Text.LastIndexOfAny(new char[] { 'E', 'e' });
-            if (eNum > 0 && eNum + 1 < textBox_result.Text.Length)
-            {
-                char nextChar = textBox_result.Text[eNum + 1];
-                if (nextChar == '+')
-                {
-                    MessageBox.Show("숫자가 너무 큽니다. 새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-                else if (nextChar == '-')
-                {
-                    MessageBox.Show("숫자가 너무 작습니다.새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-            }
-            if (textBox_result.Text == string.Empty || operators.Any(op => text.LastIndexOf(op) > 0) || textBox_result.Text.EndsWith("."))
-            {
-                MessageBox.Show("잘못된 입력입니다.");
-                result_Num = false;
-            }
-            else if (double.Parse(textBox_result.Text) < 0)
-            {
-                MessageBox.Show("음수의 제곱근은 계산할 수 없습니다. 다시 입력해주세요.");
                 return;
             }
-            else
-            {
-                textBox_result.Text = Math.Sqrt(double.Parse(textBox_result.Text)).ToString();
-                result_Num = true;
-            }
+
+            double value = double.Parse(textBox_result.Text);
+            textBox_result.Text = (value / 100).ToString();
+            result_Num = true;
         }
-        private void button_percent_Click(object sender, EventArgs e)   //퍼센트 변환
-        {
-            string text = textBox_result.Text;
-            int eNum = textBox_result.Text.LastIndexOfAny(new char[] { 'E', 'e' });
-            if (eNum > 0 && eNum + 1 < textBox_result.Text.Length)
-            {
-                char nextChar = textBox_result.Text[eNum + 1];
-                if (nextChar == '+')
-                {
-                    MessageBox.Show("숫자가 너무 큽니다. 새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-                else if (nextChar == '-')
-                {
-                    MessageBox.Show("숫자가 너무 작습니다.새로운 값을 입력 후 연산을 다시 시도해주세요.");
-                    return;
-                }
-            }
-            if (textBox_result.Text == string.Empty || operators.Any(op => text.LastIndexOf(op) > 0) || textBox_result.Text.EndsWith("."))
-            {
-                MessageBox.Show("잘못된 입력입니다.");
-                result_Num = false;
-            }
-            else
-            {
-                textBox_result.Text = (double.Parse(textBox_result.Text) * 1/100).ToString();
-                result_Num = true;
-            }
-        }
+
         #endregion
 
 
