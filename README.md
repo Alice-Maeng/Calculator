@@ -45,20 +45,25 @@ C#과 Windows Forms를 이용한 **기본 계산기 프로그램**을 만들었�
 ### 1. 연산 처리 (핵심 로직)
 
 ```csharp
-enum operation { plus, minus, divide, multiple, equal }
-operation op;
-double a, b, result;
+enum operation
+{
+    plus,
+    minus,
+    divide,
+    multiple,
+    equal
+}
 ```
 
 ```csharp
 private void HandleOperation(operation selectedOp, char symbol)
 {
-    if (조건문을 통해 입력 검증)
-    {
-        op = selectedOp;
-        textBox_result.Text += symbol;
-        result_Num = false;
-    }
+     if (double.TryParse(text, out a)) // 3+과 같은 숫자+연산자 표시를 위해 필요
+     {
+         op = selectedOp; //연산자 선택
+         textBox_result.Text += symbol; // 연산자 추가
+         result_Num = false;
+     }
 }
 ```
 
@@ -66,32 +71,144 @@ private void HandleOperation(operation selectedOp, char symbol)
 
 ---
 
-### 2. = 버튼 처리
+### 2. 숫자 버튼 처리 (`AppendNumber`)
+`AppendNumber` 메서드는 숫자 버튼을 클릭할 때마다 해당 숫자를 `RichTextBox`에 추가합니다. 
+결과값을 표시한 후 새로운 숫자를 입력하려는 경우 화면을 초기화합니다.
+
+```csharp
+private void AppendNumber(string num)
+{
+    if (result_Num)
+    {
+        richTextBox1.Text = "";
+        result_Num = false;
+    }
+    richTextBox1.Font = new Font("Arial", 14);
+    richTextBox1.Text += num;
+}
+```
+
+### 3. 연산자 처리 (`HandleOperation`)
+`HandleOperation` 메서드는 사용자가 연산자 버튼을 클릭했을 때, 입력된 텍스트가 유효한지 확인한 후, 연산자를 처리하고 텍스트에 해당 연산자를 추가합니다. 연산자 입력이 잘못된 위치에 있을 경우 에러 메시지를 표시합니다.
+
+```csharp
+private void HandleOperation(operation selectedOp, char symbol)
+{
+    string text = richTextBox1.Text;
+
+    // 빈칸 / 연산자로 끝나는 경우 오류 처리
+    if (string.IsNullOrEmpty(text) || operators.Any(op => text.EndsWith(op.ToString())) || text.EndsWith("."))
+    {
+        ShowError("연산자를 입력할 수 없는 위치입니다.");
+        return;
+    }
+
+    if (double.TryParse(text, out a))
+    {
+        op = selectedOp;
+        richTextBox1.Text += symbol; 
+        result_Num = false;
+    }
+    else
+    {
+        ShowError("숫자를 올바르게 입력해주세요.");
+    }
+}
+```
+
+### 4. `=` 버튼 클릭 시 연산 수행 (`button_eq_Click`)
+`button_eq_Click` 메서드는 사용자가 `=` 버튼을 클릭했을 때, 입력된 수식에 대해 연산을 수행하고 결과를 화면에 표시합니다. 연산자는 `op` 변수에 저장된 값에 따라 다르게 처리됩니다.
 
 ```csharp
 private void button_eq_Click(object sender, EventArgs e)
 {
-    입력값을 분리하고 (Split),
-    double.TryParse()로 a, b 파싱 후 연산 수행
-    연산 결과를 textBox에 표시
+    string text = richTextBox1.Text;
+    result_Num = true;
+
+    // 잘못된 입력 체크
+    if (string.IsNullOrEmpty(text) || operators.Any(op => text.EndsWith(op.ToString())))
+    {
+        ShowError("연산할 수 없습니다.");
+        return;
+    }
+
+    string[] parts = null;
+    char operatorSymbol = ' '; 
+
+    switch (op)
+    {
+        case operation.plus:
+            parts = text.Split('+');
+            operatorSymbol = '+';  
+            break;
+        case operation.minus:
+            parts = text.Split('-');
+            operatorSymbol = '-';  
+            break;
+        case operation.multiple:
+            parts = text.Split('*');
+            operatorSymbol = '*';  
+            break;
+        case operation.divide:
+            parts = text.Split('/');
+            operatorSymbol = '/';  
+            break;
+    }
+
+    if (parts == null || parts.Length != 2 || !double.TryParse(parts[0], out a) || !double.TryParse(parts[1], out b))
+    {
+        ShowError("올바른 계산식이 아닙니다.");
+        return;
+    }
+
+    switch (op)
+    {
+        case operation.plus:
+            result = a + b; 
+            break;
+        case operation.minus:
+            result = a - b; 
+            break;
+        case operation.multiple:
+            result = a * b; 
+            break;
+        case operation.divide:
+            if (b == 0)
+            {
+                MessageBox.Show("0으로 나눌 수 없습니다.");
+                return;
+            }
+            result = a / b; 
+            break;
+    }
+
+    richTextBox1.Clear();
+    richTextBox1.AppendText($"{a} {operatorSymbol} {b} = {result}");
+    a = result;
 }
 ```
 
-- 연산자 종류에 따라 분기(`switch-case`)하여 두 수를 계산합니다.
-
----
-
-### 3. 예외 처리
+### 5. 부호 전환 처리 (`button_pm_Click`)
+`button_pm_Click` 메서드는 부호 전환 버튼을 클릭했을 때, 현재 입력된 숫자의 부호를 반전시킵니다.
 
 ```csharp
-private void ShowError(string message = "잘못된 입력입니다.")
+private void button_pm_Click(object sender, EventArgs e)
 {
-    MessageBox.Show(message);
-    result_Num = false;
+    string text = richTextBox1.Text;
+    if (string.IsNullOrEmpty(text) || operators.Any(op => text.LastIndexOf(op) > 0) || text.EndsWith("."))
+    {
+        ShowError("부호를 바꿀 수 없습니다.");
+        return;
+    }
+
+    if (double.TryParse(text, out double value))
+    {
+        richTextBox1.Text = (-value).ToString();
+    }
 }
 ```
 
-- 소수점 중복, 잘못된 연산자 입력 등 다양한 에러 상황에 대비하여 `MessageBox` 팝업으로 사용자에게 알림을 줍니다.
+
 
 ---
 
