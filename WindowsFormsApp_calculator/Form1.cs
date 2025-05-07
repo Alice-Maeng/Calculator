@@ -538,8 +538,8 @@ namespace WindowsFormsApp_calculator
         }
         private void button_cal_log_Click(object sender, EventArgs e)   //계산 기록 보기
         {
-            Form2 popupForm = new Form2(cal_Log); //계산 기록을 넘겨줌
-            popupForm.ShowDialog(); //팝업 창 띄우기
+            //Form2 popupForm = new Form2(cal_Log); //계산 기록을 넘겨줌
+            //popupForm.ShowDialog(); //팝업 창 띄우기
         }
         private void button_m_Click(object sender, EventArgs e) //저장된 값 출력
         {
@@ -554,6 +554,27 @@ namespace WindowsFormsApp_calculator
         private void button_m_clear_Click(object sender, EventArgs e)   //저장된 값 초기화
         {
             mNum = 0;
+        }
+
+        //Background color 변경 
+        private void rEDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Red;
+        }
+
+        private void bLUEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Blue;
+        }
+
+        private void gRAYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Gray;
+        }
+
+        private void pINKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Pink;
         }
     }
 }
