@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\azbx1\\source\\repos\\Calculator\\",
+  "WorkspaceRootPath": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|c:\\users\\azbx1\\source\\repos\\calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|c:\\users\\lunit\\desktop\\prj.calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|C:\\Users\\azbx1\\source\\repos\\Calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|C:\\Users\\azbx1\\source\\repos\\Calculator\\windowsformsapp_calculator\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,28 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\azbx1\\source\\repos\\Calculator\\WindowsFormsApp_calculator\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
-              "ToolTip": "C:\\Users\\azbx1\\source\\repos\\Calculator\\WindowsFormsApp_calculator\\Form1.cs",
-              "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:53:00.651Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -51,23 +38,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\azbx1\\source\\repos\\Calculator\\WindowsFormsApp_calculator\\Form2.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form2.cs",
-              "ToolTip": "C:\\Users\\azbx1\\source\\repos\\Calculator\\WindowsFormsApp_calculator\\Form2.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "WindowsFormsApp_calculator\\Form2.cs [\uB514\uC790\uC778]",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
+              "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
+              "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAqwCEBAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:52:34.573Z"
+              "WhenOpened": "2025-05-06T08:53:00.651Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\azbx1\\source\\repos\\Calculator\\WindowsFormsApp_calculator\\Form1.cs",
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
-              "ToolTip": "C:\\Users\\azbx1\\source\\repos\\Calculator\\WindowsFormsApp_calculator\\Form1.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.cs [\uB514\uC790\uC778]",
+              "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T08:52:32.502Z"
             }
