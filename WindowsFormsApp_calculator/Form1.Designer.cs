@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox_result = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,11 +51,6 @@
             this.button_percent = new System.Windows.Forms.Button();
             this.button_square = new System.Windows.Forms.Button();
             this.button_sqrt = new System.Windows.Forms.Button();
-            this.button_power = new System.Windows.Forms.Button();
-            this.button_cal_log = new System.Windows.Forms.Button();
-            this.button_m_save = new System.Windows.Forms.Button();
-            this.button_m_clear = new System.Windows.Forms.Button();
-            this.button_m = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +58,8 @@
             this.bLUEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gRAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pINKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_power = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,11 +67,11 @@
             // 
             this.textBox_result.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox_result.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_result.Location = new System.Drawing.Point(14, 37);
+            this.textBox_result.Location = new System.Drawing.Point(14, 48);
             this.textBox_result.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_result.Multiline = true;
             this.textBox_result.Name = "textBox_result";
-            this.textBox_result.Size = new System.Drawing.Size(283, 65);
+            this.textBox_result.Size = new System.Drawing.Size(283, 82);
             this.textBox_result.TabIndex = 0;
             this.textBox_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -90,7 +86,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(14, 389);
+            this.button1.Location = new System.Drawing.Point(13, 384);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 62);
@@ -110,7 +106,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(88, 389);
+            this.button2.Location = new System.Drawing.Point(87, 384);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(57, 62);
@@ -130,7 +126,7 @@
             this.button_plus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_plus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_plus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_plus.Location = new System.Drawing.Point(240, 389);
+            this.button_plus.Location = new System.Drawing.Point(239, 384);
             this.button_plus.Margin = new System.Windows.Forms.Padding(0);
             this.button_plus.Name = "button_plus";
             this.button_plus.Size = new System.Drawing.Size(57, 62);
@@ -150,7 +146,7 @@
             this.button_eq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_eq.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_eq.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_eq.Location = new System.Drawing.Point(240, 457);
+            this.button_eq.Location = new System.Drawing.Point(239, 455);
             this.button_eq.Margin = new System.Windows.Forms.Padding(0);
             this.button_eq.Name = "button_eq";
             this.button_eq.Size = new System.Drawing.Size(57, 62);
@@ -170,7 +166,7 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(165, 389);
+            this.button3.Location = new System.Drawing.Point(164, 384);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(57, 62);
@@ -190,7 +186,7 @@
             this.button0.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button0.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button0.Location = new System.Drawing.Point(89, 457);
+            this.button0.Location = new System.Drawing.Point(87, 455);
             this.button0.Margin = new System.Windows.Forms.Padding(0);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(57, 62);
@@ -210,7 +206,7 @@
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.Location = new System.Drawing.Point(165, 319);
+            this.button6.Location = new System.Drawing.Point(164, 314);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(58, 62);
@@ -230,7 +226,7 @@
             this.button_minus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_minus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_minus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_minus.Location = new System.Drawing.Point(240, 319);
+            this.button_minus.Location = new System.Drawing.Point(239, 314);
             this.button_minus.Margin = new System.Windows.Forms.Padding(0);
             this.button_minus.Name = "button_minus";
             this.button_minus.Size = new System.Drawing.Size(57, 62);
@@ -250,7 +246,7 @@
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(89, 319);
+            this.button5.Location = new System.Drawing.Point(88, 314);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(57, 62);
@@ -270,7 +266,7 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(14, 319);
+            this.button4.Location = new System.Drawing.Point(13, 314);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(57, 62);
@@ -290,7 +286,7 @@
             this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Location = new System.Drawing.Point(166, 248);
+            this.button9.Location = new System.Drawing.Point(165, 243);
             this.button9.Margin = new System.Windows.Forms.Padding(0);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(57, 62);
@@ -310,7 +306,7 @@
             this.button_multiple.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_multiple.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_multiple.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_multiple.Location = new System.Drawing.Point(240, 248);
+            this.button_multiple.Location = new System.Drawing.Point(239, 243);
             this.button_multiple.Margin = new System.Windows.Forms.Padding(0);
             this.button_multiple.Name = "button_multiple";
             this.button_multiple.Size = new System.Drawing.Size(57, 62);
@@ -330,7 +326,7 @@
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(89, 248);
+            this.button8.Location = new System.Drawing.Point(88, 243);
             this.button8.Margin = new System.Windows.Forms.Padding(0);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(57, 62);
@@ -350,7 +346,7 @@
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(14, 248);
+            this.button7.Location = new System.Drawing.Point(13, 243);
             this.button7.Margin = new System.Windows.Forms.Padding(0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(57, 62);
@@ -370,7 +366,7 @@
             this.button_dot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_dot.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_dot.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_dot.Location = new System.Drawing.Point(166, 457);
+            this.button_dot.Location = new System.Drawing.Point(164, 455);
             this.button_dot.Margin = new System.Windows.Forms.Padding(0);
             this.button_dot.Name = "button_dot";
             this.button_dot.Size = new System.Drawing.Size(57, 62);
@@ -390,7 +386,7 @@
             this.button_pm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_pm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_pm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_pm.Location = new System.Drawing.Point(14, 457);
+            this.button_pm.Location = new System.Drawing.Point(12, 455);
             this.button_pm.Margin = new System.Windows.Forms.Padding(0);
             this.button_pm.Name = "button_pm";
             this.button_pm.Size = new System.Drawing.Size(57, 62);
@@ -410,7 +406,7 @@
             this.button_C.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_C.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_C.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_C.Location = new System.Drawing.Point(165, 202);
+            this.button_C.Location = new System.Drawing.Point(164, 192);
             this.button_C.Margin = new System.Windows.Forms.Padding(0);
             this.button_C.Name = "button_C";
             this.button_C.Size = new System.Drawing.Size(57, 38);
@@ -430,7 +426,7 @@
             this.button_divide.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_divide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_divide.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_divide.Location = new System.Drawing.Point(240, 202);
+            this.button_divide.Location = new System.Drawing.Point(239, 192);
             this.button_divide.Margin = new System.Windows.Forms.Padding(0);
             this.button_divide.Name = "button_divide";
             this.button_divide.Size = new System.Drawing.Size(57, 38);
@@ -450,7 +446,7 @@
             this.button_CE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_CE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_CE.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_CE.Location = new System.Drawing.Point(88, 202);
+            this.button_CE.Location = new System.Drawing.Point(87, 192);
             this.button_CE.Margin = new System.Windows.Forms.Padding(0);
             this.button_CE.Name = "button_CE";
             this.button_CE.Size = new System.Drawing.Size(57, 38);
@@ -470,7 +466,7 @@
             this.button_percent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_percent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_percent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_percent.Location = new System.Drawing.Point(14, 202);
+            this.button_percent.Location = new System.Drawing.Point(13, 192);
             this.button_percent.Margin = new System.Windows.Forms.Padding(0);
             this.button_percent.Name = "button_percent";
             this.button_percent.Size = new System.Drawing.Size(57, 38);
@@ -490,7 +486,7 @@
             this.button_square.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_square.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_square.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_square.Location = new System.Drawing.Point(89, 157);
+            this.button_square.Location = new System.Drawing.Point(88, 143);
             this.button_square.Margin = new System.Windows.Forms.Padding(0);
             this.button_square.Name = "button_square";
             this.button_square.Size = new System.Drawing.Size(58, 38);
@@ -510,7 +506,7 @@
             this.button_sqrt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_sqrt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_sqrt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_sqrt.Location = new System.Drawing.Point(164, 157);
+            this.button_sqrt.Location = new System.Drawing.Point(163, 143);
             this.button_sqrt.Margin = new System.Windows.Forms.Padding(0);
             this.button_sqrt.Name = "button_sqrt";
             this.button_sqrt.Size = new System.Drawing.Size(58, 38);
@@ -518,106 +514,6 @@
             this.button_sqrt.Text = "√";
             this.button_sqrt.UseVisualStyleBackColor = false;
             this.button_sqrt.Click += new System.EventHandler(this.button_sqrt_Click);
-            // 
-            // button_power
-            // 
-            this.button_power.BackColor = System.Drawing.Color.White;
-            this.button_power.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_power.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_power.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_power.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button_power.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button_power.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button_power.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_power.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_power.Location = new System.Drawing.Point(14, 157);
-            this.button_power.Margin = new System.Windows.Forms.Padding(0);
-            this.button_power.Name = "button_power";
-            this.button_power.Size = new System.Drawing.Size(57, 38);
-            this.button_power.TabIndex = 23;
-            this.button_power.Text = "^";
-            this.button_power.UseVisualStyleBackColor = false;
-            this.button_power.Click += new System.EventHandler(this.button_power_Click);
-            // 
-            // button_cal_log
-            // 
-            this.button_cal_log.BackColor = System.Drawing.Color.White;
-            this.button_cal_log.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_cal_log.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_cal_log.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_cal_log.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button_cal_log.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button_cal_log.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button_cal_log.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_cal_log.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_cal_log.Image = ((System.Drawing.Image)(resources.GetObject("button_cal_log.Image")));
-            this.button_cal_log.Location = new System.Drawing.Point(240, 157);
-            this.button_cal_log.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_cal_log.Name = "button_cal_log";
-            this.button_cal_log.Size = new System.Drawing.Size(57, 38);
-            this.button_cal_log.TabIndex = 24;
-            this.button_cal_log.UseVisualStyleBackColor = false;
-            this.button_cal_log.Click += new System.EventHandler(this.button_cal_log_Click);
-            // 
-            // button_m_save
-            // 
-            this.button_m_save.BackColor = System.Drawing.Color.White;
-            this.button_m_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_m_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_m_save.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_m_save.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button_m_save.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button_m_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button_m_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_m_save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_m_save.Location = new System.Drawing.Point(90, 110);
-            this.button_m_save.Margin = new System.Windows.Forms.Padding(0);
-            this.button_m_save.Name = "button_m_save";
-            this.button_m_save.Size = new System.Drawing.Size(57, 38);
-            this.button_m_save.TabIndex = 25;
-            this.button_m_save.Text = "MS";
-            this.button_m_save.UseVisualStyleBackColor = false;
-            this.button_m_save.Click += new System.EventHandler(this.button_m_save_Click);
-            // 
-            // button_m_clear
-            // 
-            this.button_m_clear.BackColor = System.Drawing.Color.White;
-            this.button_m_clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_m_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_m_clear.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_m_clear.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button_m_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button_m_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button_m_clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_m_clear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_m_clear.Location = new System.Drawing.Point(14, 110);
-            this.button_m_clear.Margin = new System.Windows.Forms.Padding(0);
-            this.button_m_clear.Name = "button_m_clear";
-            this.button_m_clear.Size = new System.Drawing.Size(57, 38);
-            this.button_m_clear.TabIndex = 26;
-            this.button_m_clear.Text = "MC";
-            this.button_m_clear.UseVisualStyleBackColor = false;
-            this.button_m_clear.Click += new System.EventHandler(this.button_m_clear_Click);
-            // 
-            // button_m
-            // 
-            this.button_m.BackColor = System.Drawing.Color.White;
-            this.button_m.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_m.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_m.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_m.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.button_m.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button_m.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button_m.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_m.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_m.Location = new System.Drawing.Point(165, 110);
-            this.button_m.Margin = new System.Windows.Forms.Padding(0);
-            this.button_m.Name = "button_m";
-            this.button_m.Size = new System.Drawing.Size(57, 38);
-            this.button_m.TabIndex = 27;
-            this.button_m.Text = "M";
-            this.button_m.UseVisualStyleBackColor = false;
-            this.button_m.Click += new System.EventHandler(this.button_m_Click);
             // 
             // menuStrip1
             // 
@@ -646,36 +542,76 @@
             this.gRAYToolStripMenuItem,
             this.pINKToolStripMenuItem});
             this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
-            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.backgroundColorToolStripMenuItem.Text = "Background Color";
             // 
             // rEDToolStripMenuItem
             // 
             this.rEDToolStripMenuItem.Name = "rEDToolStripMenuItem";
-            this.rEDToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rEDToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.rEDToolStripMenuItem.Text = "RED";
             this.rEDToolStripMenuItem.Click += new System.EventHandler(this.rEDToolStripMenuItem_Click);
             // 
             // bLUEToolStripMenuItem
             // 
             this.bLUEToolStripMenuItem.Name = "bLUEToolStripMenuItem";
-            this.bLUEToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bLUEToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.bLUEToolStripMenuItem.Text = "BLUE";
             this.bLUEToolStripMenuItem.Click += new System.EventHandler(this.bLUEToolStripMenuItem_Click);
             // 
             // gRAYToolStripMenuItem
             // 
             this.gRAYToolStripMenuItem.Name = "gRAYToolStripMenuItem";
-            this.gRAYToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gRAYToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.gRAYToolStripMenuItem.Text = "GRAY";
             this.gRAYToolStripMenuItem.Click += new System.EventHandler(this.gRAYToolStripMenuItem_Click);
             // 
             // pINKToolStripMenuItem
             // 
             this.pINKToolStripMenuItem.Name = "pINKToolStripMenuItem";
-            this.pINKToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pINKToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.pINKToolStripMenuItem.Text = "PINK";
             this.pINKToolStripMenuItem.Click += new System.EventHandler(this.pINKToolStripMenuItem_Click);
+            // 
+            // button_power
+            // 
+            this.button_power.BackColor = System.Drawing.Color.White;
+            this.button_power.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_power.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_power.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_power.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.button_power.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button_power.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button_power.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_power.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_power.Location = new System.Drawing.Point(13, 143);
+            this.button_power.Margin = new System.Windows.Forms.Padding(0);
+            this.button_power.Name = "button_power";
+            this.button_power.Size = new System.Drawing.Size(57, 38);
+            this.button_power.TabIndex = 23;
+            this.button_power.Text = "^";
+            this.button_power.UseVisualStyleBackColor = false;
+            this.button_power.Click += new System.EventHandler(this.button_power_Click);
+            // 
+            // button_delete
+            // 
+            this.button_delete.BackColor = System.Drawing.Color.White;
+            this.button_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_delete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_delete.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.button_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_delete.Location = new System.Drawing.Point(239, 143);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(0);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(58, 38);
+            this.button_delete.TabIndex = 29;
+            this.button_delete.Text = "←";
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // Form1
             // 
@@ -683,10 +619,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(313, 528);
-            this.Controls.Add(this.button_m);
-            this.Controls.Add(this.button_m_clear);
-            this.Controls.Add(this.button_m_save);
-            this.Controls.Add(this.button_cal_log);
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_power);
             this.Controls.Add(this.button_sqrt);
             this.Controls.Add(this.button_square);
@@ -748,11 +681,6 @@
         private System.Windows.Forms.Button button_percent;
         private System.Windows.Forms.Button button_square;
         private System.Windows.Forms.Button button_sqrt;
-        private System.Windows.Forms.Button button_power;
-        private System.Windows.Forms.Button button_cal_log;
-        private System.Windows.Forms.Button button_m_save;
-        private System.Windows.Forms.Button button_m_clear;
-        private System.Windows.Forms.Button button_m;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
@@ -760,6 +688,8 @@
         private System.Windows.Forms.ToolStripMenuItem bLUEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gRAYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pINKToolStripMenuItem;
+        private System.Windows.Forms.Button button_power;
+        private System.Windows.Forms.Button button_delete;
     }
 }
 
