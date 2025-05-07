@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_result = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button_plus = new System.Windows.Forms.Button();
@@ -56,20 +55,9 @@
             this.gRAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pINKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button_delete = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox_result
-            // 
-            this.textBox_result.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox_result.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_result.Location = new System.Drawing.Point(14, 48);
-            this.textBox_result.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_result.Multiline = true;
-            this.textBox_result.Name = "textBox_result";
-            this.textBox_result.Size = new System.Drawing.Size(283, 97);
-            this.textBox_result.TabIndex = 0;
-            this.textBox_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button1
             // 
@@ -529,12 +517,21 @@
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(14, 31);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(283, 112);
+            this.richTextBox1.TabIndex = 30;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(313, 497);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_C);
             this.Controls.Add(this.button_divide);
@@ -555,7 +552,6 @@
             this.Controls.Add(this.button_plus);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox_result);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -569,8 +565,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox_result;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button_plus;
@@ -598,6 +592,7 @@
         private System.Windows.Forms.ToolStripMenuItem gRAYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pINKToolStripMenuItem;
         private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

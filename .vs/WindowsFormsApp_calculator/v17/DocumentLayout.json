@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|c:\\users\\lunit\\desktop\\prj.calculator\\windowsformsapp_calculator\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{38D1914F-DD06-46FB-9E96-E640540BEA3D}|WindowsFormsApp_calculator\\WindowsFormsApp_calculator.csproj|solutionrelative:windowsformsapp_calculator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -32,7 +28,7 @@
               "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
               "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs*",
               "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.cs*",
-              "ViewState": "AgIAACIAAAAAAAAAAAAYwCsAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAALYAAAAAAAAAAAAgwMsAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T08:53:00.651Z",
               "IsPinned": true,
@@ -49,19 +45,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.Designer.cs",
-              "RelativeToolTip": "WindowsFormsApp_calculator\\Form1.Designer.cs",
-              "ViewState": "AgIAAMUBAAAAAAAAAAAMwMUBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T10:52:13.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Lunit\\Desktop\\Prj.Calculator\\WindowsFormsApp_calculator\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp_calculator\\Form1.cs",
